@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/chrislu1207/inventive-ironwood#readme",
   "dependencies": {
+    "start": "babel . --watch --out-dir compiled --presets=es2015,react --ignore=node_modules,compiled --source-maps inline | live-server",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "google-maps-react": "^1.0.19",
