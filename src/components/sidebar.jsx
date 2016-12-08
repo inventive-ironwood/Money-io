@@ -1,7 +1,7 @@
 var Sidebar = (props) => (
   <ul className="sidebar-nav">
     <li className="sidebar-brand">
-      <a href="#">Reca$hly</a>
+      <a href="#">Money.io</a>
     </li>
     <li>
     <img src='../src/assets/profile.png'></img>
