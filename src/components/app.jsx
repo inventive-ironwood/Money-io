@@ -2,7 +2,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     //this.click = this.click.bind(this);
-    this.state = {};
+    this.data = props.data;
+    this.state = {
+      title: 'Spending'
+    };
   }
   // click(vid) {
   //   // if (vid !== undefined) {
@@ -13,8 +16,7 @@ class App extends React.Component {
   //     // this.props.searchViews({key: window.YOUTUBE_API_KEY, id: vid.id.videoId}, this.viewsCaller);
   //     // this.props.searchComments({key: window.YOUTUBE_API_KEY, id: vid.id.videoId}, this.commentsCaller)
   // }
-
-  // componentDidMount() {
+    // componentDidMount() {
   //   this.props.searchYouTube({key: window.YOUTUBE_API_KEY, query: 'puppies', max: 8}, this.caller);
   // }
 
@@ -27,6 +29,8 @@ class App extends React.Component {
       <div>
         <h1>Reca$hly</h1>
         <Sidebar />
+        <Spending list={this.data} title={this.state.title} />
+        <OwesList list={this.data} title={this.state.title} />
       </div>
     );
   }

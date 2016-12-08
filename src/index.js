@@ -1,1 +1,1 @@
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App data={[{icon:'../src/assets/burger.png', title: 'Panda Express', price: '$' + 9.32}, {icon:'../src/assets/burger.png', title: 'Chris\'s mom', price: '$' + 0.99}]} />, document.getElementById('app'));
