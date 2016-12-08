@@ -25,8 +25,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <searchbar />
-        <sidebar />
+        <h1>Reca$hly</h1>
+        <Sidebar />
       </div>
     );
   }
