@@ -1,7 +1,20 @@
 var OwesList = (props) => (
   <div className="owes">
-    <h2>{props.title}</h2>
-    {props.list.map(owes => <OwesListEntry entry={owes} />)}
+    <h2>Dues</h2>
+    <table className="table">
+      <thead id="owes-head">
+        <tr>
+          <th></th>
+          <th>Title</th>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Testing</th>
+        </tr>
+      </thead>
+      <tbody>
+      {props.list.map(owes => <OwesListEntry entry={owes} />)}
+      </tbody>
+    </table>
   </div>
 );
 
