@@ -11,10 +11,10 @@ var Sidebar = (props) => (
        Username
       </li>
       <li>
-        <a href="#">Spending</a>
+        <a onClick={props.click}href="#">Spending</a>
       </li>
       <li>
-        <a href="#">Owes/Debts</a>
+        <a onClick={props.click}href="#">Owes/Debts</a>
       </li>
     </ul>
   </div>
