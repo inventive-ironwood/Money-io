@@ -1,9 +1,12 @@
 var request = require('request');
 
 
-exports.renderer = function(req, res) {
-  for (var key in req.body) {
-    console.log(key)
-    exports.searchWeather(key, exports.searchTwitter, res);
-  }
+exports.currency = function(req, res) {
+  request.get({url: 'http://api.fixer.io/latest?base=USD'},  function(error, response, body) { 
+    if (!error) { 
+      res.send(JSON.parse(body));
+    } else{
+      console.log('error');
+    }
+  }); 
 };
