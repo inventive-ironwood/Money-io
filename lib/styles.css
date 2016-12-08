@@ -26,7 +26,7 @@ body {
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    background: #212121;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -122,6 +122,12 @@ body {
         position: relative;
         margin-right: 0;
     }
+}
+
+.appTitle {
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 69px;
 }
 
 table {

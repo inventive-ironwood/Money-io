@@ -28,6 +28,7 @@ class App extends React.Component {
           <Sidebar click={this.click}/>
         </div>
         <div id='page-content-wrapper'>
+          <h1 className='appTitle'>Money.io</h1>
           {this.state.curr}
         </div>
       </div>
