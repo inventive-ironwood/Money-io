@@ -2,7 +2,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     //this.click = this.click.bind(this);
-    this.state = {};
+    this.data = props.data;
+    this.render();
   }
   // click(vid) {
   //   // if (vid !== undefined) {
@@ -24,7 +25,11 @@ class App extends React.Component {
   // }
   render() {
     return (
-      <Sidebar />
+      <div className="app">
+        <Sidebar />
+        <SpendingList list={this.data} />
+        <OwesList list={this.data} />
+      </div>
     );
   }
 
