@@ -1,12 +1,12 @@
-var Spending = (props) => (
+var SpendingList = (props) => (
   <div className="spending">
     <h2>{props.title}</h2>
     {props.list.map(spending => <SpendingListEntry entry={spending} />)}
   </div>
 );
 
-Spending.prototypes = {
+SpendingList.prototypes = {
   list: React.PropTypes.array.isRequired
 }
 
-window.Spending = Spending;
+window.SpendingList = SpendingList;
