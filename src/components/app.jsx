@@ -2,8 +2,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.click = this.click.bind(this);
+    this.submit = this.submit.bind(this);
     this.state = {
-      curr: (<SpendingList list={props.data} />),
+      curr: (<SpendingList list={props.data} submit={this.submit}/>),
       data: props.data
     };
     this.render();
@@ -13,7 +14,7 @@ class App extends React.Component {
     console.log(e.target.innerHTML);
     if (e.target.innerHTML === 'Spending') {
       this.setState({ 
-        curr: (<SpendingList list={this.state.data} />)
+        curr: (<SpendingList list={this.state.data} submit={this.submit} />)
       });
     } else if (e.target.innerHTML === 'Owes/Debts') {
       this.setState({
@@ -21,6 +22,17 @@ class App extends React.Component {
       });
     }
   }
+
+  submit(e) {
+    var newData = this.state.data;
+    newData.push({
+      icon: '../src/assets/burger.png',
+      title: e.target.children[2].children[0].value,
+      price: '$' + e.target.children[3].children[1].value
+    });
+    this.setState({data: newData});
+  }
+
   render() {
     return (
       <div id="wrapper" className="app">

@@ -20,6 +20,6 @@ var OwesList = (props) => (
 
 OwesList.prototypes = {
   list: React.PropTypes.array.isRequired
-}
+};
 
 window.OwesList = OwesList;
