@@ -15,11 +15,12 @@ var SpendingList = (props) => (
       {props.list.map(owes => <OwesListEntry entry={owes} />)}
       </tbody>
     </table>
+    <SpendingForm submit={props.submit}/>
   </div>
 );
 
 SpendingList.prototypes = {
   list: React.PropTypes.array.isRequired
-}
+};
 
 window.SpendingList = SpendingList;
