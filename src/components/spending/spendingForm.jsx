@@ -17,7 +17,7 @@ var SpendingForm = (props) => (
       <div className="input-group-addon">$</div>
       <input type="text" className="form-control" id="exampleInputAmount" placeholder="Amount" />
     </div>
-    <button type="submit" className="btn btn-primary">Submit</button>
+    <button type="submit" className="btn btn-success">Submit</button>
   </form>
 );
 
