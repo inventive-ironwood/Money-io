@@ -15,6 +15,18 @@ var Sidebar = (props) => (
     <li>
       <a onClick={props.click}href="#">Owes/Debts</a>
     </li>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <li>
+      <a href='#'>Sign Out</a>
+    </li>
   </ul>
 );
 
