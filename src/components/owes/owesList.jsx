@@ -15,6 +15,9 @@ var OwesList = (props) => (
       {props.list.map(owes => <OwesListEntry entry={owes} />)}
       </tbody>
     </table>
+    <DuesForm />
+    <br>
+    <LoansForm />
   </div>
 );
 
