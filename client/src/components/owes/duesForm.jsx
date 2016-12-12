@@ -1,15 +1,6 @@
 var DuesForm = (props) => (
   <form className='form-inline' onSubmit={props.submitOwesLoans}>
     <h3>Add Dues</h3>
-    <div className='form-group'>
-      <select className="custom-select">
-        <option selected>Category</option>
-        <option value="Restaraunt">Restaraunt</option>
-        <option value="Food">Food</option>
-        <option value="Shopping">Shopping</option>
-        <option value="Transportation">Transportation</option>
-      </select>
-    </div>
     <div className="form-group">
       <input type="text" className="form-control" placeholder="Name"/>
     </div>
@@ -20,8 +11,6 @@ var DuesForm = (props) => (
       <div className="input-group-addon">$</div>
       <input type="text" className="form-control" id="exampleInputAmount" placeholder="Amount" />
     </div>
-    <br />
-    <br />
     <button type="submit" className="btn btn-primary">Submit</button>
   </form>
 );
