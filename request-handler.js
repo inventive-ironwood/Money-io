@@ -7,13 +7,13 @@ var Debts = require('./app/collections/debts');
 var Debt = require('./app/models/debt');
 
 exports.currency = function(req, res) {
-  request.get({url: 'http://api.fixer.io/latest?base=USD'}, function(error, response, body) { 
-    if (!error) { 
+  request.get({url: 'http://api.fixer.io/latest?base=USD'}, function(error, response, body) {
+    if (!error) {
       res.send(JSON.parse(body));
     } else {
       console.log('error');
     }
-  }); 
+  });
 };
 
 exports.signin = function(req, res, next) {
@@ -45,8 +45,8 @@ exports.signin = function(req, res, next) {
             }).then(function() {
               console.log('HEEEY LMAO');
               res.location('/');
-              res.send(param);
-              // res.redirect('/');
+              // res.send(param);
+              res.redirect('/');
               next();
             });
           });
