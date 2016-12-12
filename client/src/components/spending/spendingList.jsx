@@ -4,15 +4,14 @@ var SpendingList = (props) => (
     <table className="table">
       <thead id="spending-head">
         <tr>
-          <th></th>
-          <th>Date</th>
+          <th>Category</th>
           <th>Title</th>
           <th>Amount</th>
-          <th>Total</th>
+          <th>Date</th>
         </tr>
       </thead>
       <tbody>
-      {props.list.map(owes => <OwesListEntry entry={owes} />)}
+      {props.list.map(owes => <SpendingListEntry entry={owes} />)}
       </tbody>
     </table>
     <SpendingForm submit={props.submit}/>
