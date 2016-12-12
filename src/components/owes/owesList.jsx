@@ -4,8 +4,8 @@ var OwesList = (props) => (
     <table className="table">
       <thead id="owes-head">
         <tr>
+          <th>Category</th>
           <th>Title</th>
-          <th>Who</th>
           <th>Amount</th>
           <th>Date</th>
           <th>Option</th>
