@@ -21,6 +21,8 @@ app.post('/signup', handler.signup);
 app.get('/logout', handler.logout);
 app.get('/currency', handler.currency);
 app.post('/transactions', handler.transactions);
+app.get('/transactions', handler.getTransactions);
 app.post('/debts', handler.debts);
+app.get('/debts', handler.getDebts);
 
 module.exports = app;
