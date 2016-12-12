@@ -55,11 +55,13 @@ class App extends React.Component {
   submitOwesLoans(e) {
     e.preventDefault();
     var owesLoansData = {
-      person: e.target.children[2].children[0].value,
-      type: e.target.children[3].children[0].value,
-      amount: '$' + e.target.children[4].children[1].value,
+      person: e.target.children[1].children[0].value,
+      type: e.target.children[2].children[0].value,
+      amount: '$' + e.target.children[3].children[1].value,
       url: 'debts'
     };
+
+    console.log(owesLoansData);
 
     postReq(owesLoansData);
   }
