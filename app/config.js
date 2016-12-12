@@ -39,7 +39,7 @@ db.knex.schema.hasTable('debts').then(function(exists) {
   if (!exists) {
     db.knex.schema.createTable('debts', function (entry) {
       entry.string('type', 255);
-      entry.integer('person').references('users.id');
+      entry.string('person');
       entry.float('amount');
       entry.timestamps('date');
       entry.integer('user_id').references('users.id');
