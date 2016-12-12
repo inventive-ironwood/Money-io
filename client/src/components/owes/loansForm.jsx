@@ -4,6 +4,9 @@ var LoansForm = (props) => (
     <div className="form-group">
       <input type="text" className="form-control" placeholder="Name"/>
     </div>
+    <div id="descBox" className="form-group">
+      <input type="text" className="form-control" placeholder="Description"/>
+    </div>
     <div className="input-group">
       <div className="input-group-addon">$</div>
       <input type="text" className="form-control" id="exampleInputAmount" placeholder="Amount" />
