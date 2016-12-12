@@ -16,7 +16,8 @@ exports.currency = function(req, res) {
   }); 
 };
 
-exports.signin = function(req, res) {
+exports.signin = function(req, res, next) {
+  console.log('Req is: ', req.body);
   var username = req.body.username;
   var password = req.body.password;
   new User({username: username }).fetch().then(function(user) {
@@ -35,15 +36,19 @@ exports.signin = function(req, res) {
               console.log(param.transaction);
             }
           }).then(function() {
+            console.log('Got to debts');
             new Debt({user_id: user.attributes.id}).fetchAll().then(function(debt) {
               if (debt) {
                 param.debt = debt.models;
                 console.log(param.debt);
               }
-            }).then([function() {
+            }).then(function() {
+              console.log('HEEEY LMAO');
+              res.location('/');
               res.send(param);
+              // res.redirect('/');
               next();
-            }, res.redirect('./')]);
+            });
           });
         });
       } else {
@@ -75,7 +80,8 @@ exports.signup = function(req, res) {
 };
 
 exports.check = function(req, res, next) {
-  if (!req.session.user && (req.originalUrl !== '/signup/')) {
+  console.log('Session user is: ', req.session.user);
+  if (req.session.user === undefined && (req.originalUrl === '/')) {
     res.redirect('/signin');
   } else {
     next();

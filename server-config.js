@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.static((path.join(__dirname, './'))));
 app.use(express.static(path.join(__dirname, './client')));
 app.use(session({secret: 'keyboard cat', resave: false, saveUninitialized: true}));
-// app.use(handler.check);
+app.use(handler.check);
 
 app.get('/signin', express.static((path.join(__dirname, './client/signin/'))));
 app.post('/signin', handler.signin);
