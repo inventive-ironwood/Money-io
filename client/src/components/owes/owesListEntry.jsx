@@ -1,7 +1,7 @@
 var OwesListEntry = (props) => (
   <tr>
+    <td> Dunstan </td>
     <td>{props.entry.title}</td>
-    <td> Jon </td>
     <td>{props.entry.amount}</td>
     <td>2 hours ago</td>
     <td>
