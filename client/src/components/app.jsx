@@ -13,7 +13,7 @@ class App extends React.Component {
 
   click(e) {
     console.log(e.target.innerHTML);
-    if (e.target.innerHTML === 'Spending') {
+    if (e.target.innerHTML === 'Transactions') {
       this.setState({
         curr: (<SpendingList list={this.state.data} submit={this.submit} />)
       });

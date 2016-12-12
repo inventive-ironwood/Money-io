@@ -1,6 +1,6 @@
 var SpendingList = (props) => (
   <div className="spending">
-    <h2>Spending</h2>
+    <h2>Transactions</h2>
     <table className="table">
       <thead id="spending-head">
         <tr>
