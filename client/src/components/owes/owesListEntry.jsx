@@ -2,7 +2,7 @@ var OwesListEntry = (props) => (
   <tr>
     <td>{props.entry.title}</td>
     <td> Jon </td>
-    <td>{props.entry.price}</td>
+    <td>{props.entry.amount}</td>
     <td>2 hours ago</td>
     <td>
        <div className="btn-group">
