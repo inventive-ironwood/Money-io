@@ -93,8 +93,8 @@ exports.transactions = function(req, res) {
   var category = req.body.category;
   var title = req.body.title;
   var amount = req.body.amount;
-  var userID = req.session.user.id;
-  Spendings.create({category: category, title: title, amount: amount, user_id: userID})
+  // var userID = req.session.user.id;
+  Spendings.create({category: category, title: title, amount: amount, user_id: 0})
   .then(function() {
     res.send('done');
   });
