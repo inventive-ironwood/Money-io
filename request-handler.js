@@ -136,16 +136,8 @@ exports.debts = function(req, res) {
   var amount = req.body.amount;
   // var userID = req.session.user.id;
   var personID;
-  new User({username: person}).fetch().then(function(user) {
-    if (!user) {
-      res.status(404).send('Person not found');
-    } else {
-      personID = user.attributes.id;
-    }
-  }).then(function(user) {
-    Debts.create({type: type, amount: amount, person: personID, user_id: 1})
-      .then(function() {
-        res.send('Done');
-      });
-  });
+  Debts.create({type: type, amount: amount, person: person, user_id: 1})
+    .then(function() {
+      res.send('Done');
+    });
 };
