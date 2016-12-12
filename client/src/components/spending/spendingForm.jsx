@@ -5,9 +5,13 @@ var SpendingForm = (props) => (
       <select className="custom-select">
         <option selected>Category</option>
         <option value="Restaraunt">Restaraunt</option>
-        <option value="Food">Food</option>
-        <option value="Shopping">Shopping</option>
+        <option value="Groceries">Groceries</option>
         <option value="Transportation">Transportation</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Utilities">Utilities</option>
+        <option value="Nightlife">Nightlife</option>
+        <option value="Cash">Cash</option>
+        <option value="Other">Other</option>
       </select>
     </div>
     <div className="form-group">
