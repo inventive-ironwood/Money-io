@@ -2,13 +2,13 @@ var postReq = (options, callback) => {
   // TODO
   $.ajax({
   // This is the url you should use to communicate with the parse API server.
-    url: 'https:/127.0.0.1:3000/' + options.url,
+    url: 'http://127.0.0.1:8000/' + options.url,
     type: 'POST',
-    data: options.req,
+    data: options,
     success: function (data) {
 
-      // console.log('youtube: Message received', data.items);
-      callback(data.items);
+      console.log('Post Request: Message Received, ', data);
+      // callback(data.items);
     },
     error: function (data) {
       // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
@@ -21,7 +21,7 @@ var getReq = (options, callback) => {
   // TODO
   $.ajax({
   // This is the url you should use to communicate with the parse API server.
-    url: 'https:/127.0.0.1:3000/' + options.url,
+    url: '127.0.0.1:8000/' + options.url,
     type: 'GET',
     success: function (data) {
 
