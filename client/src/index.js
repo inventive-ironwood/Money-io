@@ -1,1 +1,1 @@
-ReactDOM.render(<App postReq={postReq} data={[{icon: '../src/assets/burger.png', title: 'Panda Express', amount: '$' + 9.32}, {icon: '../src/assets/burger.png', title: 'Walgreens', amount: '$' + 0.99}]} />, document.getElementById('app'));
+ReactDOM.render(<App postReq={postReq} getReq={getReq} data={} />, document.getElementById('app'));
