@@ -1,5 +1,5 @@
 var LoansForm = (props) => (
-  <form className='form-inline'>
+  <form className='form-inline' onSubmit={props.submiteOwesLoans}>
     <h3>Add Loans</h3>
     <div className='form-group'>
       <select className="custom-select">

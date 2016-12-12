@@ -15,9 +15,9 @@ var OwesList = (props) => (
       {props.list.map(owes => <OwesListEntry entry={owes} />)}
       </tbody>
     </table>
-    <DuesForm />
+    <DuesForm submitOwesLoans={props.submitOwesLoans}/>
     <br />
-    <LoansForm />
+    <LoansForm submitOwesLoans={props.submitOwesLoans}/>
   </div>
 );
 
