@@ -27,9 +27,24 @@ exports.signin = function(req, res) {
       if (user.attributes.password === password) {
         req.session.regenerate(function() {
           req.session.user = user;
-          res.redirect('/');
           console.log('successful log in');
-          // new Spendings({user.attributes.});
+          var param = {};
+          new Spending({user_id: user.attributes.id}).fetchAll().then(function(transaction) {
+            if (transaction) {
+              param.transaction = transaction.models;
+              console.log(param.transaction);
+            }
+          }).then(function() {
+            new Debt({user_id: user.attributes.id}).fetchAll().then(function(debt) {
+              if (debt) {
+                param.debt = debt.models;
+                console.log(param.debt);
+              }
+            }).then([function() {
+              res.send(param);
+              next();
+            }, res.redirect('./')]);
+          });
         });
       } else {
         console.log('incorrect password');
