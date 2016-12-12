@@ -1,10 +1,25 @@
 var OwesListEntry = (props) => (
   <tr>
-    <td><img src={props.entry.icon} ></img></td>
     <td>{props.entry.title}</td>
-    <td>12/8/16 - 7:13PM</td>
+    <td> Jon </td>
     <td>{props.entry.amount}</td>
-    <td>Placeholder</td>
+    <td>2 hours ago</td>
+    <td>
+       <div className="btn-group">
+  <button type="button" className="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Pay via
+  </button>
+  <div className="dropdown-menu dropdown-menu-right">
+    <a className="dropdown-item" href="#">Paypal</a>
+    <div className="dropdown-divider"></div>
+    <a className="dropdown-item" href="#">Venmo</a>
+    <div className="dropdown-divider"></div>
+    <a className="dropdown-item" href="#">Square</a>
+    <div className="dropdown-divider"></div>
+    <a className="dropdown-item" href="#">Bitcoin</a>
+  </div>
+</div>
+    </td>
   </tr>
 );
 
