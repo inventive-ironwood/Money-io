@@ -27,4 +27,4 @@ var signIn = (props) => (
                     </div>
 );
 
-window.signIn = singIn;
+window.signIn = signIn;

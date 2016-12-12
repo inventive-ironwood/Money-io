@@ -5,6 +5,7 @@ class App extends React.Component {
     this.submit = this.submit.bind(this);
     console.log(this.props);
     this.state = {
+      signedIn: false,
       curr: (<SpendingList list={props.data} submit={this.submit}/>),
       data: this.props.data
     };
@@ -26,13 +27,19 @@ class App extends React.Component {
   submit(e) {
     e.preventDefault();
     var newData = this.state.data;
-    newData.push({
-      icon: '../src/assets/burger.png',
-      title: e.target.children[2].children[0].value,
-      price: '$' + e.target.children[3].children[1].value
-    });
 
-    this.state.data = newData;
+    var spendingData = {
+      category: e.target.children[1].children[0].children[e.target.children[1].children[0].selectedIndex].value,
+      title: e.target.children[2].children[0].value,
+      amount: '$' + e.target.children[3].children[1].value,
+      url: 'transactions'
+    };
+
+    console.log(spendingData);
+
+    postReq(spendingData);
+
+    this.state.data.push(spendingData);
 
     if (this.state.curr.type.name === 'SpendingList') {
       this.setState({
@@ -60,7 +67,4 @@ class App extends React.Component {
   }
 
 }
-
-// In the ES6 spec, files are "modules" and do not share a top-level scope
-// `var` declarations will only exist globally where explicitly defined
 window.App = App;
