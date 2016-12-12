@@ -15,7 +15,6 @@ class App extends React.Component {
   }
 
   loadTrans(data) {
-    console.log(data.transaction);
     this.setState({
       transactions: data.transaction
     });
@@ -97,7 +96,7 @@ class App extends React.Component {
 
     postReq(owesLoansData);
 
-    this.props.getReq({url: 'debts'}, this.loadTrans.bind(this));
+    this.props.getReq({url: 'debts'}, this.loadDebts.bind(this));
   }
 
   render() {
