@@ -16,7 +16,7 @@ var OwesList = (props) => (
       </tbody>
     </table>
     <DuesForm />
-    <br>
+    <br />
     <LoansForm />
   </div>
 );
