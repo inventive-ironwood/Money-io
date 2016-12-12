@@ -3,6 +3,7 @@ class App extends React.Component {
     super(props);
     this.click = this.click.bind(this);
     this.submit = this.submit.bind(this);
+    this.submitOwesLoans = this.submitOwesLoans.bind(this);
     console.log(this.props);
     this.state = {
       signedIn: false,
@@ -19,14 +20,13 @@ class App extends React.Component {
       });
     } else if (e.target.innerHTML === 'Owes/Debts') {
       this.setState({
-        curr: (<OwesList list={this.state.data} />)
+        curr: (<OwesList list={this.state.data} submitOwesLoans={this.submitOwesLoans}/>)
       });
     }
   }
 
   submit(e) {
     e.preventDefault();
-    var newData = this.state.data;
 
     var spendingData = {
       category: e.target.children[1].children[0].children[e.target.children[1].children[0].selectedIndex].value,
@@ -47,9 +47,21 @@ class App extends React.Component {
       });
     } else {
       this.setState({
-        curr: (<OwesList list={this.state.data} />)
+        curr: (<OwesList list={this.state.data} submitOwesLoans={this.submitOwesLoans}/>)
       });
     }
+  }
+
+  submitOwesLoans(e) {
+    e.preventDefault();
+    var owesLoansData = {
+      person: e.target.children[2].children[0].value,
+      type: e.target.children[3].children[0].value,
+      amount: '$' + e.target.children[4].children[1].value,
+      url: 'debts'
+    };
+
+    postReq(owesLoansData);
   }
 
   render() {
