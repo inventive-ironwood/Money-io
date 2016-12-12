@@ -1,15 +1,13 @@
 var path = require('path');
 var knex = require('knex')({
- client: 'sqlite3',
- connection: {
-   filename: path.join(__dirname, '../db/moneyio.sqlite')
- },
- useNullAsDefault: true
+  client: 'sqlite3',
+  connection: {
+    filename: path.join(__dirname, '../db/moneyio.sqlite')
+  },
+  useNullAsDefault: true
 });
 
 var db = require('bookshelf')(knex);
-
- 
 
 db.knex.schema.hasTable('users').then(function(exists) {
   if (!exists) {
@@ -22,11 +20,10 @@ db.knex.schema.hasTable('users').then(function(exists) {
     });
   }
 });
-
  
-db.knex.schema.hasTable('spending').then(function(exists) {
+db.knex.schema.hasTable('spendings').then(function(exists) {
   if (!exists) {
-    db.knex.schema.createTable('spending', function (entry) {
+    db.knex.schema.createTable('spendings', function (entry) {
       entry.string('category', 255);
       entry.string('title', 255);
       entry.float('amount');
@@ -38,13 +35,11 @@ db.knex.schema.hasTable('spending').then(function(exists) {
   }
 });
 
-
-
 db.knex.schema.hasTable('debts').then(function(exists) {
   if (!exists) {
     db.knex.schema.createTable('debts', function (entry) {
       entry.string('type', 255);
-      entry.integer('person').references('users.id')
+      entry.integer('person').references('users.id');
       entry.float('amount');
       entry.timestamps('date');
       entry.integer('user_id').references('users.id');
