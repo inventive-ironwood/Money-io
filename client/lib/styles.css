@@ -199,7 +199,16 @@ h3 {
     margin-right: 10px;
 }
 
+.username {
+    color: #fff;
+}
 
+.profilepic {
+  border-radius: 50%;
+  height: 130px;
+  margin: -5px 0 10px 0;
+  vertical-align: top;
+}
 
 
 
