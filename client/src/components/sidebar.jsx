@@ -4,13 +4,13 @@ var Sidebar = (props) => (
       <a href="#">Money.io</a>
     </li>
     <li>
-    <img src='../src/assets/profile.png'></img>
+    <img className='profilepic' src='https://dyn0.media.forbiddenplanet.com/products/102701.jpg.square-true_maxheight-285_size-285.jpg'></img>
     </li>
     <li>
-     Username
+     <p className='username'>DJ Chrismaid</p>
     </li>
     <li>
-      <a onClick={props.click}href="#">Spending</a>
+      <a onClick={props.click}href="#">Transactions</a>
     </li>
     <li>
       <a onClick={props.click}href="#">Owes/Debts</a>
