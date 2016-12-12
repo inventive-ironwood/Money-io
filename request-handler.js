@@ -106,6 +106,30 @@ exports.transactions = function(req, res) {
   });
 };
 
+exports.getDebts = function(req, res) {
+  var param = {};
+  new Debt({user_id: req.session.user.id}).fetchAll().then(function(debt) {
+    if (debt) {
+      param.debt = debt.models;
+      console.log(param.debt);
+    }
+  }).then(function() {
+    res.send(param);
+  });
+};
+
+exports.getTransactions = function(req, res) {
+  var param = {};
+  new Spending({user_id: req.session.user.id}).fetchAll().then(function(transaction) {
+    if (transaction) {
+      param.transaction = transaction.models;
+      console.log(param.transaction);
+    }
+  }).then(function() {
+    res.send(param);
+  });
+};
+
 exports.debts = function(req, res) {
   var type = req.body.type;
   var person = req.body.person;
