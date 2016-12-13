@@ -7,7 +7,7 @@ var Sidebar = (props) => (
     <img className='profilepic' src='https://dyn0.media.forbiddenplanet.com/products/102701.jpg.square-true_maxheight-285_size-285.jpg'></img>
     </li>
     <li>
-     <p className='username'>DJ Chrismaid</p>
+     <p className='username'>Chris</p>
     </li>
     <li>
       <a onClick={props.click}href="#">Transactions</a>

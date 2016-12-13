@@ -100,7 +100,8 @@ exports.transactions = function(req, res) {
   var title = req.body.title;
   var amount = req.body.amount;
   // var userID = req.session.user.id;
-  Spendings.create({category: category, title: title, amount: amount, user_id: 0})
+  console.log('id', req.session.user.id);
+  Spendings.create({category: category, title: title, amount: amount, user_id: req.session.user.id})
   .then(function() {
     res.send('done');
   });
@@ -108,6 +109,7 @@ exports.transactions = function(req, res) {
 
 exports.getDebts = function(req, res) {
   var param = {};
+  console.log('id', req.session.user.id);
   new Debt({user_id: req.session.user.id}).fetchAll().then(function(debt) {
     if (debt) {
       param.debt = debt.models;
@@ -120,6 +122,7 @@ exports.getDebts = function(req, res) {
 
 exports.getTransactions = function(req, res) {
   var param = {};
+  console.log('id', req.session.user.id);
   new Spending({user_id: req.session.user.id}).fetchAll().then(function(transaction) {
     if (transaction) {
       param.transaction = transaction.models;
@@ -135,8 +138,9 @@ exports.debts = function(req, res) {
   var person = req.body.person;
   var amount = req.body.amount;
   // var userID = req.session.user.id;
+  console.log('id',req.session.user.id);
   var personID;
-  Debts.create({type: type, amount: amount, person: person, user_id: 1})
+  Debts.create({type: type, amount: amount, person: person, user_id: req.session.user.id})
     .then(function() {
       res.send('Done');
     });
