@@ -9,7 +9,6 @@ var app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(express.static((path.join(__dirname, './'))));
 app.use(express.static(path.join(__dirname, './client')));
 app.use(session({secret: 'keyboard cat', resave: false, saveUninitialized: true}));
 app.use(handler.check);

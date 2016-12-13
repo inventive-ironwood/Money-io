@@ -1,12 +1,12 @@
-# TagCloud
+# Money.io
 
-> Pithy project description
+> Money.io is a financing app that allows users to keep track of their spendings as well as debts and loans.
 
 ## Team
 
-  - __Product Owner__: Chris Lu
+  - __Product Owner__: Jonathan Wu
   - __Scrum Master__: Humaid Khan
-  - __Development Team Members__: Dunstan Zheng, Jonathan Wu
+  - __Development Team Members__: Dunstan Zheng, Chris Lu
 
 ## Table of Contents
 
@@ -24,12 +24,12 @@
 
 ## Requirements
 
-- Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- Ayy Lmao
-- etc
-- etc
+- Node
+- Express
+- Sqlite3
+- Bookshelf
+- React
+- Bootstrap
 
 ## Development
 

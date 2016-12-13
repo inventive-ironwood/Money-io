@@ -1,17 +1,17 @@
 # Money.io #  
 ## Sub-Heading ##
-    Commuters and pedestrians
+    Money.io is designed for everyone in need of financial tracking.
 ## Summary ##
-    Add comments to certain locations to help users be more aware of dangerous/safe areas in their surroundings  
+    Users have the ability to track their spendings as well as their dues and loans.
 ## Problem ##
-    Users will be able to dodge sketchy areas and find  great places to eat
+    People easily lose track of who owes them money. Having a spending history also helps with establishing better spending habits.
 ## Solution ##
-    Using google's api, each user will help other's know of dangerous or safe locations
+    By listing user spending and dues/loans in one page, users can access their history in one convenient time.
 ## Quote from You ##
-    Before tag cloud, people wouldn't about the dangers within their own neighbourhood. Now, users can find safer areas all across the world.
+    "Before Money.io, I had to go to my bank account everytime I wanted to view my spending history. Now, I can access everything with one click!"
 ## How to Get Started ##
-    Just open up the website and get tagging
+    Go to money.io, sign up as a new user and get started! It's easier than backbone.js
 ## Customer Quote ##
-    I can finally let people know about the smell on market street
+    "Wow, I owe Dunstan a hundred dollars, now I will never forget!" - Nicholas Wang 2016
 ## Closing and Call to Action ##
-    Head on over to our website at tagcloud.com and get started
+    Head on over money.io to re-take command of your spendings!
