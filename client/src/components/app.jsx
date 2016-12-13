@@ -4,7 +4,6 @@ class App extends React.Component {
     this.click = this.click.bind(this);
     this.submit = this.submit.bind(this);
     this.submitOwesLoans = this.submitOwesLoans.bind(this);
-    // console.log(this.props);
     this.state = {
       signedIn: false,
       curr: (<SpendingList list={props.data} submit={this.submit}/>),
@@ -25,7 +24,6 @@ class App extends React.Component {
   }
 
   loadDebts(data) {
-    console.log(data);
     this.setState({
       debts: data.debt
     });
@@ -37,21 +35,15 @@ class App extends React.Component {
 
   componentDidMount() {
     this.props.getReq({url: 'transactions'}, this.loadTrans.bind(this));
-    // this.props.getReq({url: 'debts'}, this.loadDebts.bind(this));
-    console.log(this.state.transactions);
   }
 
   click(e) {
-    console.log(e.target.innerHTML);
     if (e.target.innerHTML === 'Transactions') {
       this.setState({
         curr: (<SpendingList list={this.state.transactions} submit={this.submit} />)
       });
     } else if (e.target.innerHTML === 'Owes/Debts') {
       this.props.getReq({url: 'debts'}, this.loadDebts.bind(this));
-      // this.setState({
-      //   curr: (<OwesList list={this.state.debts} submitOwesLoans={this.submitOwesLoans}/>)
-      // });
     }
   }
 
@@ -65,11 +57,8 @@ class App extends React.Component {
       url: 'transactions'
     };
 
-    console.log(spendingData);
-
     postReq(spendingData);
 
-    // this.state.data.push(spendingData);
     this.props.getReq({url: 'transactions'}, this.loadTrans.bind(this));
 
     if (this.state.curr.type.name === 'SpendingList') {
@@ -92,8 +81,6 @@ class App extends React.Component {
       url: 'debts'
     };
 
-    console.log(owesLoansData);
-
     postReq(owesLoansData);
 
     this.props.getReq({url: 'debts'}, this.loadDebts.bind(this));
@@ -102,15 +89,15 @@ class App extends React.Component {
   render() {
     return (
       <div id="wrapper" className="app">
-      <div id='sidebar-wrapper'>
-      <Sidebar click={this.click}/>
+        <div id='sidebar-wrapper'>
+          <Sidebar click={this.click}/>
+        </div>
+        <div id='page-content-wrapper'>
+          <h1 className='appTitle'><strong>Money</strong>.io</h1>
+          {this.state.curr}
+        </div>
       </div>
-      <div id='page-content-wrapper'>
-      <h1 className='appTitle'><strong>Money</strong>.io</h1>
-      {this.state.curr}
-      </div>
-      </div>
-      );
+    );
   }
 
 }

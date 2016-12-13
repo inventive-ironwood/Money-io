@@ -43,9 +43,7 @@ exports.signin = function(req, res, next) {
                 console.log(param.debt);
               }
             }).then(function() {
-              console.log('HEEEY LMAO');
               res.location('/');
-              // res.send(param);
               res.redirect('/');
               next();
             });
@@ -138,7 +136,7 @@ exports.debts = function(req, res) {
   var person = req.body.person;
   var amount = req.body.amount;
   // var userID = req.session.user.id;
-  console.log('id',req.session.user.id);
+  console.log('id', req.session.user.id);
   var personID;
   Debts.create({type: type, amount: amount, person: person, user_id: req.session.user.id})
     .then(function() {
