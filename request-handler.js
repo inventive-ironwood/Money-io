@@ -30,24 +30,10 @@ exports.signin = function(req, res, next) {
           req.session.user = user;
           console.log('successful log in');
           var param = {};
-          new Spending({user_id: user.attributes.id}).fetchAll().then(function(transaction) {
-            if (transaction) {
-              param.transaction = transaction.models;
-              console.log(param.transaction);
-            }
-          }).then(function() {
-            console.log('Got to debts');
-            new Debt({user_id: user.attributes.id}).fetchAll().then(function(debt) {
-              if (debt) {
-                param.debt = debt.models;
-                console.log(param.debt);
-              }
-            }).then(function() {
-              res.location('/');
-              res.redirect('/');
-              next();
-            });
-          });
+          console.log('HEEEY LMAO');
+          res.location('/');
+          res.redirect('/');
+          next();
         });
       } else {
         console.log('incorrect password');
@@ -85,7 +71,6 @@ exports.check = function(req, res, next) {
     next();
   }
 };
-
 exports.logout = function(req, res) {
   req.session.destroy(function() {
     res.redirect('/signin');
@@ -108,7 +93,7 @@ exports.transactions = function(req, res) {
 exports.getDebts = function(req, res) {
   var param = {};
   console.log('id', req.session.user.id);
-  new Debt({user_id: req.session.user.id}).fetchAll().then(function(debt) {
+  new Debt().query({where: {user_id: req.session.user.id}}).fetchAll().then(function(debt) {
     if (debt) {
       param.debt = debt.models;
       console.log(param.debt);
@@ -121,7 +106,7 @@ exports.getDebts = function(req, res) {
 exports.getTransactions = function(req, res) {
   var param = {};
   console.log('id', req.session.user.id);
-  new Spending({user_id: req.session.user.id}).fetchAll().then(function(transaction) {
+  new Spending().query({where: {user_id: req.session.user.id}}).fetchAll().then(function(transaction) {
     if (transaction) {
       param.transaction = transaction.models;
       console.log(param.transaction);
@@ -136,7 +121,7 @@ exports.debts = function(req, res) {
   var person = req.body.person;
   var amount = req.body.amount;
   // var userID = req.session.user.id;
-  console.log('id', req.session.user.id);
+  console.log('id',req.session.user.id);
   var personID;
   Debts.create({type: type, amount: amount, person: person, user_id: req.session.user.id})
     .then(function() {
